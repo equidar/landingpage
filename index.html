@@ -86,11 +86,16 @@
             background: #4CAF50;
             border-radius: 5px;
             text-decoration: none;
-            transition: background 0.3s;
+            transition: transform 0.3s, background 0.3s;
         }
 
         .cta:hover {
             background: #45a049;
+            transform: scale(1.1);
+        }
+
+        .cta:active {
+            transform: scale(0.95);
         }
 
         footer {
@@ -121,12 +126,23 @@
         <div class="hero">
             <h1>The Marketplace for Home Equity</h1>
             <p>Our platform empowers homeowners by providing a seamless and efficient way to sell home equity to investors</p>
-            <a href="#" class="cta">Book a Demo</a>
+            <a href="#" id="book-demo" class="cta">Book a Demo</a>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 EQUIDAR, Inc. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('book-demo').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Add a smooth animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                window.location.href = 'https://calendly.com/equidar9/30min';
+            }, 300); // Adjust the delay to match the animation timing
+        });
+    </script>
 </body>
 </html>
