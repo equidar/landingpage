@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - EQUIDAR</title>
+    <title>Real Estate Fintech Startup</title>
     <style>
         * {
             margin: 0;
@@ -13,12 +13,13 @@
         }
 
         body {
-            background: #121212;
-            color: #e0e0e0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
+            justify-content: space-between;
+            min-height: 100vh;
+            background: #121212;
+            color: #e0e0e0;
         }
 
         header {
@@ -27,14 +28,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: transparent;
+            background: transparent; /* Ensure header is transparent */
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: #4CAF50;
-            text-decoration: none;
         }
 
         nav {
@@ -54,62 +54,47 @@
         }
 
         main {
-            max-width: 800px;
             text-align: center;
-            margin: 40px auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
-        .section {
-            margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
+        .hero {
+            max-width: 800px;
+            margin: auto;
         }
 
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section h2 {
+        .hero h1 {
             font-size: 2.5rem;
             color: #4CAF50;
             margin-bottom: 20px;
         }
 
-        .section p {
-            font-size: 1.5rem;
-            line-height: 2;
+        .hero p {
+            font-size: 1.25rem;
+            line-height: 1.5;
             color: #b0b0b0;
             margin-bottom: 30px;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Ensure 3 equal-width columns */
-            gap: 40px; /* Equal spacing between items */
-            justify-items: center; /* Center items horizontally */
-            margin: 40px 0;
+        .cta {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #121212;
+            background: #4CAF50;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
         }
 
-        .stat {
-            background: #1e1e1e;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center; /* Center align text inside the box */
+        .cta:hover {
+            background: #45a049;
+            transform: scale(1.1);
         }
 
-        .stat h3 {
-            font-size: 2rem;
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-
-        .stat p {
-            font-size: 1.25rem;
-            color: #b0b0b0;
+        .cta:active {
+            transform: scale(0.95);
         }
 
         footer {
@@ -117,66 +102,30 @@
             padding: 20px;
             text-align: center;
             background-color: #1e1e1e;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
         }
 
         footer p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #b0b0b0;
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">EQUIDAR</a>
+        <div class="logo">EQUIDAR</div>
         <nav>
             <a href="about.html">About</a>
-            <a href="#features">Features</a>
-            <a href="#contact">Contact</a>
+            <a href="features">Features</a>
+            <a href="contact">Contact</a>
         </nav>
     </header>
 
     <main>
-        <div class="section" id="introduction">
-            <h2>A New Approach to an Old Industry</h2>
-            <p>
-                We are building the Home Equity Marketplace, unlocking the biggest asset for homeowners 
-                and creating new investment opportunities for investors. Our platform is designed to 
-                revolutionize the way homeowners and investors connect.
-            </p>
-        </div>
-
-        <div class="stats">
-            <div class="stat">
-                <h3>$190,000+</h3>
-                <p>Home Equity of Average Homeowner</p>
-            </div>
-            <div class="stat">
-                <h3>$28+ Trillion</h3>
-                <p>Total Home Equity of Homeowners</p>
-            </div>
-            <div class="stat">
-                <h3>221+ Million</h3>
-                <p>Homeowners in the US</p>
-            </div>
-        </div>
-
-        <div class="section" id="homeowners">
-            <h2>For Homeowners</h2>
-            <p>
-                Millions of Americans do not have an easy and low-cost way to tap into their biggest asset—their home.
-                They are often forced to rely on loans with high interest rates and monthly payments.
-                At EQUIDAR, we are building the marketplace for Home Equity, connecting homeowners seeking financial 
-                independence with investors who can help unlock their wealth.
-            </p>
-        </div>
-
-        <div class="section" id="investors">
-            <h2>For Investors</h2>
-            <p>
-                Our innovative platform democratizes access to lucrative real estate opportunities. 
-                EQUIDAR allows individuals to invest in real estate with significantly lower capital requirements 
-                than conventional methods, unlocking a new era of accessible and rewarding investments.
-            </p>
+        <div class="hero">
+            <h1>The Marketplace for Home Equity</h1>
+            <p>Our platform empowers homeowners by providing a seamless and efficient way to sell home equity to investors</p>
+            <a href="#" id="book-demo" class="cta">Book a Demo</a>
         </div>
     </main>
 
@@ -185,23 +134,13 @@
     </footer>
 
     <script>
-        // Reveal elements on scroll
-        const sections = document.querySelectorAll('.section, .stat');
-
-        const revealOnScroll = () => {
-            const triggerBottom = window.innerHeight * 0.85;
-
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-
-                if (sectionTop < triggerBottom) {
-                    section.classList.add('visible');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
+        document.getElementById('book-demo').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            this.style.transform = 'scale(0.95)'; // Click animation
+            setTimeout(() => {
+                window.location.href = 'https://calendly.com/equidar9/30min'; // Redirect after animation
+            }, 300); // Match the animation timing
+        });
     </script>
 </body>
 </html>
