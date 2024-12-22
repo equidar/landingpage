@@ -132,5 +132,15 @@
     <footer>
         <p>&copy; 2024 EQUIDAR, Inc. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('book-demo').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            this.style.transform = 'scale(0.95)'; // Click animation
+            setTimeout(() => {
+                window.location.href = 'https://calendly.com/equidar9/30min'; // Redirect after animation
+            }, 300); // Match the animation timing
+        });
+    </script>
 </body>
 </html>
