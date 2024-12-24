@@ -28,7 +28,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: transparent; /* Ensure header is transparent */
+            background: transparent;
         }
 
         .logo {
@@ -61,12 +61,25 @@
         .hero {
             max-width: 800px;
             margin: auto;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
             font-size: 2.5rem;
             color: #4CAF50;
             margin-bottom: 20px;
+            animation: popUp 1.5s ease-in-out;
         }
 
         .hero p {
@@ -74,6 +87,18 @@
             line-height: 1.5;
             color: #b0b0b0;
             margin-bottom: 30px;
+            animation: popUp 2s ease-in-out;
+        }
+
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .cta {
