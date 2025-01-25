@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission - EQUIDAR</title>
     <style>
+        /* Reset & Base Styling */
         * {
             margin: 0;
             padding: 0;
@@ -21,6 +22,7 @@
             overflow-x: hidden;
         }
 
+        /* Header */
         header {
             width: 100%;
             padding: 20px 40px;
@@ -53,6 +55,7 @@
             color: #4CAF50;
         }
 
+        /* Main Content */
         main {
             max-width: 800px;
             text-align: center;
@@ -120,6 +123,7 @@
             color: #b0b0b0;
         }
 
+        /* Footer */
         footer {
             width: 100%;
             padding: 20px;
@@ -131,13 +135,54 @@
             font-size: 1rem;
             color: #b0b0b0;
         }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 600px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .section p {
+                font-size: 1.2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat {
+                padding: 20px;
+            }
+
+            .stat h3 {
+                font-size: 1.5rem;
+            }
+
+            .stat p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">EQUIDAR</a>
+        <!-- Changed 'about.html' to 'mission.html' so it reloads the current page -->
         <nav>
-            <a href="about.html">Mission</a>
+            <a href="mission.html">Mission</a>
         </nav>
     </header>
 
@@ -196,7 +241,6 @@
 
         const revealOnScroll = () => {
             const triggerBottom = window.innerHeight * 0.85;
-
             sections.forEach(section => {
                 const sectionTop = section.getBoundingClientRect().top;
 
